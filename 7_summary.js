@@ -44,3 +44,31 @@ console.log(typeof add);//function
 console.log(typeof heros);//object
 console.log(typeof myObj);//object
 console.log(typeof anotherId);//symbol
+
+//stack memory(primitive datatype) , heap memory(non-primitive datatype)
+/*whenever stack memory is used,it's means that you get a copy of whatever
+ variable you've decalre.that's why they not change in original
+                &
+ whenever heap memory is used used, you get a refrence to 
+ the original value and any change you make will change the original one*/
+
+ //stack
+ let myYoutubename = "mahekjogiyoutube.com"
+ let anothername = myYoutubename
+//  anothername = "mahek"
+
+ console.log(myYoutubename);
+ console.log(anothername);
+
+//heap
+ let userOne = {
+    email:"user@gmail.com",
+    upi: "user@upi.com"
+ }
+let userTwo = userOne
+userTwo.email = "mahek@gmail.com"
+console.log(userOne)
+console.log(userTwo)
+
+console.log(userOne.email)
+console.log(userTwo.email)
