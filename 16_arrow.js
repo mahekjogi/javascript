@@ -32,3 +32,27 @@ const chai = () => {
     console.log(this)
 }
 chai()
+
+/*basic syntax of arrow fuction is () => {}
+    you also hold in a variable */
+//this is a expliste return means you need to write return keyword
+const addTwo = (num1, num2) => {
+    return num1 + num2
+}
+console.log(addTwo(3,4))
+
+//inplesite returen means you not need write a {} and return keyword 
+//also write in a one line      
+const addTwo1 = (num1, num2) =>  num1 + num2
+//if you write in a () you not need write a return key word
+const addTwo2 = (num1, num2) =>  (num1 + num2)
+console.log(addTwo(3,4))
+//how to return object
+//const addtwo3 = (num1, num2) => {username: "mahek"} you write like this output was undefined
+//for return a object you need to write a object in ()
+const addtwo3 = (num1, num2) => ({username: "mahek"})
+
+const myArry = [2,3,5,7,8,9]
+
+//myArry.forEach(function() {})//get foreach loop and add function method and their values 
+//myArry.forEach(() => {})//you also add arrow function in array foreach loop
