@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dom Learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <!-- dom - document object model -->
+        <h1  id ="title" class="heading">DOM learning on chai aur code <span style="display: none;">test text</span></h1>
+        <h2  id ="title" class="heading">DOM learning on chai aur code <span style="display: none;">test text</span></h2>
+        <h2  id ="title" class="heading">DOM learning on chai aur code <span style="display: none;">test text</span></h2>
+        
+        <p>Hello Everone</p>
+        <input type="password">
+
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+
+        </ul>
+        <!-- Practice in console browser
+        document.getElementById('title') use for get a spacefic tag that shote the id
+        document.getElementById('title').id use for what is athe id name
+         document.getElementById('title').class that can't access the class show undefined
+        document.getElementById('title').className use for know about the class name 
+        document.getElementById('title').getAttribute you write like this that can't work 
+        document.getElementById('title').getAttribute('id') you write like this and get the id name
+        document.getElementById('title').getAttribute('class') use for know about the class name
+        NOTE : getAttribute get the value of the attribute
+        document.getElementById('title').setAttribute('id', 'test') also we have setAttribute use for change the attribute value first get attribute then give the value what you change it
+        
+        NOTE: every time that overwrite
+
+        INLINE STYLE IN THE CONSOLE BROWSER:
+        title.style.backgroundcolor = blue
+        title.style.padding = 15px
+        title.style.borderRadiuse = 15px
+        -->
+        <!-- use for what write in it
+        title.textContent use for what text in it like hidden text also show in it
+        'DOM learning on chai aur code'
+        title.innerHTML got full html tag ('DOM learning on chai aur code <span style="display: none;">test text</span>')
+        'DOM learning on chai aur code'
+        title.innerText use for what text visible on the screen , hidden text can't show
+        'DOM learning on chai aur code' -->
+
+        <!-- document.getElementsByClassName('heading')
+        HTMLCollection [h1#title.heading, title: h1#title.heading]
+        0: h1#title.headingtitle: h1#title.headinglength: 
+        1[[Prototype]]: HTMLCollection
+        
+        document.querySelector('h2') they get the 1st h2 tag not all h2 tag
+        document.querySelector('#title') also you can use query selector for select id but you need to give a id name
+        document.querySelector('.heading') also you can use query selector for select class you need use class name
+        document.querySelector('input[type="password"]')
+
+        const myul = document.querySelector('ul') store into a variable
+        myul.querySelector('li') access inner tag 
+        const turnGreen = myul.querySelector('li') store in a variable
+        turnGreen.style.background = "green" use the a variable and style get the color
+        document.querySelectorAll('li') use for a know about how many list in thier and li in a not pure array forment
+        li store in tempList variable
+        they give in a node list that look like a arry but that the diffrent from the array
+        tempList[0].style.color = 'green' if you like to add color you need to clear a that perforom on wich element or array
+
+        you can't use forEach loop on list without convert it into a array
+        for a conver into a array you need to write a Array.from() here Array is keyword to convert it into array and form use to from  where to start convert it 
+        -->
+
+    </div>
+</body>
+</html>
