@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai & me</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    //setInterval have same handler(call back funcrion) and timout but works deffirent
+    /*setInterval(function (){//in this print countinutally they can't stop
+        // console.log("mahek",Date.now());
+        
+    },1000)*/
+
+    //store in a variable and function use get refrence
+    const sayDate = function(str){
+        console.log(str, Date.now());
+        
+    }
+    // setInterval(sayDate, 1000)
+    //also you can get perameter
+    //setInterval(sayDate, 1000, "hi")
+
+    //for a stop 
+    const intervalId = setInterval(sayDate, 1000, "hi")
+    clearInterval(intervalId)
+</script>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>chai with code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    /*setTimeout(function(){//setTimeout also use callback function
+        console.log("mahek");
+    },2000)*/ //here 2000 is a 2 secends but write 2000 because of in the milisecondes 
+    //means of this code is give mea time after that i work on it and only one time i do your work not more than one time
+
+//using with get refrence of the function
+const sayMahek = function(){
+    console.log("mahek");
+}
+//can i change the h1
+    // document.querySelector('h1').innerHTML = "best js series"
+    //if i went i save it after the 2 secends that can change for that i do
+    const changeText = function(){
+    document.querySelector('h1').innerHTML = "best js series"
+      
+    }
+// setTimeout(changeText, 2000)
+
+// setTimeout(sayMahek, 2000)
+//cleartime use to stope the setTimeout and in clearTimeout we need to get a refrence
+
+ const changeMe = setTimeout(changeText, 2000)
+    document.querySelector('#stop').addEventListener('click',function(){
+    clearTimeout(changeMe)
+    console.log("stopped")
+    })//use for stop change the h1 tag
+</script>
+</html>

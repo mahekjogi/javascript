@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    Value	State	Description
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete.
+</body>
+<script>
+    //CREATE A OBJECT it's a method you can use to send the request and recive the request
+    const requestUrl = 'https://api.github.com' 
+    const xhr = new XMLHttpRequest();
+    //  in the open method you get the perameters 1st is which type of methos you use like get or post and 2nd is string
+     xhr.open('GET', requestUrl)
+      //this can't continuesally print for continueslly print you need to do after this part
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+            if(xhr.readyState ===4){
+              const data = JSON.parse(this.responseText)//that convert adata in to json beacuse this taht is in astring and show undefined 
+              console.log(typeof data);
+              
+            //   console.log(data.repostery);
+            }
+    }
+     
+     xhr.send();
+</script>
+</html>

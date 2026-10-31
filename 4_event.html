@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Start should change the Background colore every second</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+</body>
+<script>
+    //generate a randome color
+    const randomColor = function(){
+        const hex = '0123456789ABCDEF';
+        let color = '#';
+        for(let i = 0; i < 6; i++){
+            color += hex[Math.floor(Math.random() * 16)];
+        }
+        return color;
+    }
+let intervalId
+const startChangingColor = function(){
+    /*if(!inttervalId){
+     intervalId = setInterval(changeBgColor , 1000);
+if code you use when intervalId = null does not work properly
+    }*/
+     intervalId = setInterval(changeBgColor , 1000);
+    function changeBgColor(){
+    document.body.style.backgroundColor = randomColor();
+
+    }
+};
+const stopChangingColor = function(){
+    document.body.style.backgroundColor = randomColor();
+    clearInterval(intervalId);
+    intervalId = null;//interval flash out here beacuse interval id in aglobal scopr that's way that override 
+    //you click on stop means thire intervalId have no work so stop thier intervalId
+    //also call variable or value convert in derefrence
+};
+
+  document.querySelector("#start").addEventListener('click', startChangingColor)
+  document.querySelector("#stop").addEventListener('click', stopChangingColor)
+ 
+</script>
+</html>

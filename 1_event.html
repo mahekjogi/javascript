@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Html events</title>
+</head>
+<body style="background-color: #414141; color: #fff;">
+    <h2>Amazing Images</h2>
+    <ul id="images">
+        <li>
+            <img id="photoshop" src="pexels-jiri-ikonomidis-164966727-40431378.jpg" alt="photoshop" width="200px"><br>
+        </li>
+        <li>
+            <img id="flower" src="pexels-anfel-lanane-2356529-40591810.jpg" alt="" width="200px" height="200px"><br>
+        </li>
+        <li>
+            <img id="river" src="pexels-punttim-5677267.jpg" alt="" width="200px"><br>
+        </li>
+       
+        <li><a style="color: #fff;" href="https://google.com" id="google">Google</a></li>
+    </ul>
+</body>
+<script>
+    // js works sequentially so we need to get events sequentislly
+    //this tyes of line of code called approach
+    // document.getElementById('river').onclick = function(){
+    //     alert("rever clicked")//onclick give as  a less fetures 
+    // }
+
+
+/*events list:
+types, timestamp, defaultPrevented, 
+target, toElement, srcElement, currentTarget,
+clientX, clientY , screenX, screenY
+altkey, ctrlkey, shiftkey, keyCode*/
+
+
+    // document.getElementById('river').addEventListener('click', function(){
+    //     alert("river clicked again")
+    // })
+    //event listener was lisene a many events like keyboard events , mouse events etc...
+    
+    //attachEvent use in the earily time
+    //jQuey is a freamwork like react in that have  - on event
+    
+    document.getElementById('river').addEventListener('click', function(e){
+        console.log(e);
+    }, false)//false was a default value 
+    //also we have event object
+    //if we write it and show on our screen use inspect and consol show pointer event
+    //wiche type of events we get in ? a brower events and envieroment events
+
+    //false it's event bubbling
+    //true it's event capturing
+    document.getElementById('images').addEventListener('click', function(e){
+        console.log("clicked inside the ul");
+    }, false)//bubbling works down to up
+      document.getElementById('river').addEventListener('click', function(e){
+        console.log("revier it click");
+        e.stopPropagation()//works do bubbling and don't go to up
+    }, false)//capturing works up to down
+    document.getElementById('google').addEventListener
+    ('click',function(e){
+        e.preventDefault();//output gogle clicked
+        e.stopPropagation();//stop bubbling
+        console.log("gogle clicked");
+        
+    },false)
+
+    document.querySelector('#images').addEventListener
+    ('click', function(e){
+        //console.log(e.target.parentNode);
+        console.log(e.target.tagName);//works click on the items show the tag type like img, li ect...
+
+        if (e.target.tagName === 'IMG') {
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+         removeIt.remove()
+        }
+        
+         //target lis event se aa raha hai
+        //parentNode gives a full tag of what you cilck
+        //how to remove it
+        //removeIt.parentNode.removeChild(removeIt)
+        //if you click on link on google link all the items are removed 
+        //beacuse you give the parentNode is the parenNode of li and google is li items you click on it the li items was delete but parentNode is ul was also deleted
+
+    })
+</script>
+</html>
